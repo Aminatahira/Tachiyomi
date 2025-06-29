@@ -412,12 +412,12 @@ const About = () => {
               >
                 Get Involved
               </Link>
-              <a
-                href="#"
+              <Link
+                to="/download"
                 className="border-2 border-primary-foreground/30 text-primary-foreground hover:border-primary-foreground hover:bg-primary-foreground/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
               >
-                View on GitHub
-              </a>
+                Download Now
+              </Link>
             </div>
           </div>
         </section>
