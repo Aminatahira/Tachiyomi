@@ -336,7 +336,7 @@ const Download = () => {
                       Enable Unknown Sources
                     </h3>
                     <p className="text-muted-foreground">
-                      Go to Settings > Security > Unknown Sources and enable
+                      Go to Settings &gt; Security &gt; Unknown Sources and enable
                       installation from unknown sources. This allows you to
                       install APK files directly downloaded from our website.
                       Note that this setting location may vary depending on your
