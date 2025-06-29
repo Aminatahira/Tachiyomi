@@ -57,6 +57,15 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        manga: {
+          ink: "#0F172A",
+          charcoal: "#1E293B",
+          slate: "#334155",
+          crimson: "#DC2626",
+          purple: "#6366F1",
+          gold: "#F59E0B",
+          paper: "#F8FAFC",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
