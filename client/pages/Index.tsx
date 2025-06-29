@@ -1,6 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -56,7 +63,7 @@ const Index = () => {
             <div className="relative">
               <div className="relative mx-auto w-64 h-96 lg:w-80 lg:h-[480px]">
                 <img
-                  src="https://images.pexels.com/photos/1275229/pexels-photo-1275229.jpeg"
+                  src="https://images.pexels.com/photos/29051450/pexels-photo-29051450.jpeg"
                   alt="Tachiyomi App Interface"
                   className="w-full h-full object-cover rounded-3xl shadow-2xl"
                 />
@@ -201,58 +208,62 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Technology Section */}
+      {/* Advanced Features Section */}
       <section className="py-24">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h2 className="text-3xl lg:text-5xl font-bold">
-                  Built with{" "}
-                  <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                    Cutting-Edge Technology
-                  </span>
-                </h2>
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  Tachiyomi leverages the latest Android technologies to provide
-                  a smooth, responsive, and efficient reading experience. Our
-                  commitment to technical excellence ensures optimal performance
-                  across all device types and Android versions.
-                </p>
-              </div>
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold">
+              Advanced{" "}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Capabilities
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Discover the sophisticated features that make Tachiyomi the most
+              advanced manga reading platform available for Android devices.
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div className="space-y-8">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary-foreground font-bold">K</span>
+                    <span className="text-primary-foreground font-bold">
+                      AI
+                    </span>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">
-                      Kotlin Native Development
+                      AI-Powered Recommendations
                     </h3>
                     <p className="text-muted-foreground">
-                      Built entirely in Kotlin for optimal Android performance,
-                      ensuring fast startup times, efficient memory usage, and
-                      seamless integration with Android's native features. Our
-                      modern architecture provides stability and smooth
-                      operation across all supported devices.
+                      Advanced machine learning algorithms analyze your reading
+                      patterns, genre preferences, and completion rates to
+                      suggest manga series you'll love. Our recommendation
+                      engine continuously learns and improves, ensuring you
+                      discover hidden gems and trending titles perfectly matched
+                      to your taste.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary-foreground font-bold">A</span>
+                    <span className="text-primary-foreground font-bold">
+                      ⚡
+                    </span>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">
-                      Advanced Image Processing
+                      Lightning-Fast Performance
                     </h3>
                     <p className="text-muted-foreground">
-                      Sophisticated image optimization and caching algorithms
-                      ensure fast loading times while maintaining exceptional
-                      image quality. Our smart compression reduces bandwidth
-                      usage without compromising the visual experience of your
+                      Optimized for speed and efficiency, Tachiyomi loads pages
+                      instantly with intelligent pre-loading and advanced
+                      caching mechanisms. Our image compression technology
+                      reduces data usage by up to 70% while maintaining crisp,
+                      clear visuals that preserve the artistic integrity of your
                       favorite manga.
                     </p>
                   </div>
@@ -260,17 +271,21 @@ const Index = () => {
 
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-accent to-primary rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary-foreground font-bold">S</span>
+                    <span className="text-primary-foreground font-bold">
+                      🔒
+                    </span>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">
-                      Secure & Private
+                      Enterprise-Grade Security
                     </h3>
                     <p className="text-muted-foreground">
-                      End-to-end encryption for all user data, ensuring your
-                      reading habits and personal information remain completely
-                      private. We follow strict privacy guidelines and never
-                      share user data with third parties or advertisers.
+                      Your privacy and security are paramount. We implement
+                      AES-256 encryption for all data transmission, secure
+                      authentication protocols, and zero-logging policies. Your
+                      reading history, bookmarks, and personal preferences
+                      remain completely private and are never shared with third
+                      parties or advertisers.
                     </p>
                   </div>
                 </div>
@@ -279,8 +294,8 @@ const Index = () => {
 
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/15326117/pexels-photo-15326117.jpeg"
-                alt="Technology showcase"
+                src="https://images.pexels.com/photos/6281024/pexels-photo-6281024.jpeg"
+                alt="Advanced features showcase"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent rounded-2xl"></div>
@@ -289,8 +304,66 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Community Section */}
+      {/* Reading Modes Section */}
       <section className="py-24 bg-card/50">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold">
+              Multiple{" "}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Reading Modes
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Experience manga exactly how you prefer with our comprehensive
+              selection of reading modes and customization options.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                mode: "Paged Mode",
+                description:
+                  "Traditional page-by-page reading with smooth transitions and page curl effects.",
+                icon: "📖",
+              },
+              {
+                mode: "Continuous Scroll",
+                description:
+                  "Seamless vertical scrolling for uninterrupted reading flow and immersion.",
+                icon: "📜",
+              },
+              {
+                mode: "Webtoon Mode",
+                description:
+                  "Optimized for long-strip webtoons with intelligent panel detection.",
+                icon: "📲",
+              },
+              {
+                mode: "Double Page",
+                description:
+                  "Side-by-side pages for landscape viewing and traditional manga layout.",
+                icon: "📰",
+              },
+            ].map((mode, index) => (
+              <div
+                key={index}
+                className="text-center p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="text-4xl mb-4">{mode.icon}</div>
+                <h3 className="text-lg font-semibold mb-3">{mode.mode}</h3>
+                <p className="text-muted-foreground text-sm">
+                  {mode.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Community Section */}
+      <section className="py-24">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl lg:text-5xl font-bold">
@@ -381,6 +454,186 @@ const Index = () => {
               >
                 Watch Tutorials →
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-card/50">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold">
+              Frequently Asked{" "}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Questions
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Find answers to common questions about Tachiyomi's features,
+              installation, and usage.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-4">
+            {[
+              {
+                question: "Is Tachiyomi really free to use?",
+                answer:
+                  "Yes, Tachiyomi is completely free and always will be. We're an open-source project funded by community donations and volunteer contributions. There are no premium subscriptions, hidden fees, or advertisements. Our commitment to free access ensures that everyone can enjoy manga regardless of their financial situation.",
+              },
+              {
+                question: "How many manga sources does Tachiyomi support?",
+                answer:
+                  "Tachiyomi supports over 10,000 manga sources through our extensive extension system. These include official publisher sources, fan translation groups, and community-maintained libraries. Our extension system allows for easy addition of new sources, and we regularly update our source catalog to ensure maximum content availability.",
+              },
+              {
+                question: "Can I read manga offline with Tachiyomi?",
+                answer:
+                  "Absolutely! Tachiyomi's offline reading feature allows you to download entire manga series or individual chapters for reading without an internet connection. Our intelligent compression system optimizes file sizes while maintaining image quality, and you can set automatic download schedules for your favorite ongoing series.",
+              },
+              {
+                question: "Is my reading data private and secure?",
+                answer:
+                  "Your privacy is our top priority. All user data is encrypted using industry-standard AES-256 encryption. We implement a zero-logging policy, meaning we don't track your reading habits for advertising purposes. Your reading history, bookmarks, and preferences are stored locally on your device and optionally synced through our secure cloud service.",
+              },
+              {
+                question:
+                  "Does Tachiyomi work on tablets and different Android versions?",
+                answer:
+                  "Yes, Tachiyomi is optimized for all Android devices including phones, tablets, and Android TV. We support Android 6.0 and later versions, ensuring compatibility with virtually all modern Android devices. The interface automatically adapts to different screen sizes and orientations for the best reading experience.",
+              },
+              {
+                question: "How often does Tachiyomi receive updates?",
+                answer:
+                  "We release stable updates monthly, with beta updates available weekly for early testers. Critical bug fixes and security patches are deployed immediately as needed. Our development team continuously works on improvements based on community feedback, ensuring Tachiyomi stays current with the latest Android features and user needs.",
+              },
+              {
+                question: "Can I contribute to Tachiyomi's development?",
+                answer:
+                  "We welcome contributions from developers, translators, and community members! You can contribute code through our GitHub repository, help translate the app into new languages, create documentation, or support fellow users in our community forums. Check our contribution guidelines on GitHub to get started.",
+              },
+              {
+                question: "What reading customization options are available?",
+                answer:
+                  "Tachiyomi offers extensive customization including multiple reading modes (paged, continuous scroll, webtoon), zoom controls, background colors, page transitions, reading direction settings, and custom themes. You can also set up reader preferences per series, allowing different settings for different types of manga.",
+              },
+            ].map((faq, index) => (
+              <div
+                key={index}
+                className="border border-border rounded-lg overflow-hidden"
+              >
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full px-6 py-4 text-left bg-card hover:bg-card/80 transition-colors flex justify-between items-center"
+                >
+                  <span className="font-semibold text-foreground">
+                    {faq.question}
+                  </span>
+                  <svg
+                    className={`w-5 h-5 text-muted-foreground transform transition-transform ${
+                      openFaq === index ? "rotate-180" : ""
+                    }`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                {openFaq === index && (
+                  <div className="px-6 py-4 bg-background border-t border-border">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Updates Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold">
+              Latest{" "}
+              <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                Updates
+              </span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Stay informed about the newest features, improvements, and
+              announcements from the Tachiyomi development team.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+              <div className="text-sm text-primary font-medium mb-2">
+                Version 0.15.2
+              </div>
+              <h3 className="text-lg font-semibold mb-3">
+                Enhanced Reading Performance
+              </h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                Major improvements to image loading speeds, reduced memory
+                usage, and smoother page transitions for an even better reading
+                experience.
+              </p>
+              <Link
+                to="/blog"
+                className="text-primary hover:text-primary/80 text-sm font-medium"
+              >
+                Read More →
+              </Link>
+            </div>
+
+            <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+              <div className="text-sm text-secondary font-medium mb-2">
+                Community Update
+              </div>
+              <h3 className="text-lg font-semibold mb-3">
+                New Translation Languages
+              </h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                Tachiyomi now supports 12 additional languages thanks to our
+                amazing community translators, making manga accessible to even
+                more readers worldwide.
+              </p>
+              <Link
+                to="/blog"
+                className="text-primary hover:text-primary/80 text-sm font-medium"
+              >
+                Read More →
+              </Link>
+            </div>
+
+            <div className="p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg">
+              <div className="text-sm text-accent font-medium mb-2">
+                Feature Release
+              </div>
+              <h3 className="text-lg font-semibold mb-3">
+                AI-Powered Recommendations
+              </h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                Our new machine learning recommendation system helps you
+                discover manga series perfectly matched to your reading
+                preferences and history.
+              </p>
+              <Link
+                to="/blog"
+                className="text-primary hover:text-primary/80 text-sm font-medium"
+              >
+                Read More →
+              </Link>
             </div>
           </div>
         </div>
